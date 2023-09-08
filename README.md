@@ -1,7 +1,19 @@
 
 # TODO
 
-- [ ] write a component that renders a string in a way I can style each letter.
+- [x] renders a string in a way I can style each letter.
+- [x] basic typing functionality with visuals.
+- [x] make the demo presnetable.
+- [ ] deploy the demo somewhere.
+- [ ] save the users mistyped words somewhere. Maybe add user accounts.
+
+- [ ] add levels with different groups of words getting less common.
+- [ ] Add multi lingual support. Start with spanish.
+- [ ] make it look good with css
+- [ ] Add some basic functionality to lookup word and thier meaning.
+- [ ] add some scrolling behavor?
+
+- [ ] get typescript working properly.
 
 # DESIGN
 
@@ -30,6 +42,12 @@ ok thats not bad.
     - slow recording.
     - analizer.
 
+# Roadmap to somewhere far away.
+
+- [ ] think about creating a vim extension or writting tool that tracks what you misspell.
+- [ ] add a audio reader.
+- [ ] and some flashcards and audio settings to drill words for language learning.
+- [ ] Add a freedom typing mode, that records what you misspell. instead?
 
 # create-svelte
 

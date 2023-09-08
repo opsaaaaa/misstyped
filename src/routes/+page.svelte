@@ -1,5 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Wellcome to Misstyped</h1>
+
+<p>We help you Find, Track, and Fix the all words you frequently Mistype.</p>
+
+<p><a href="/type">Get Started</a> and Stop Misstyping!</p>
 
 
 

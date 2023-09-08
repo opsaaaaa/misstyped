@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import { afterUpdate } from 'svelte'
+  import { afterUpdate, onMount } from 'svelte'
 
   let typer
 
@@ -77,10 +77,14 @@
     reset()
   }
 
+  onMount(()=>{
+    typer.focus()
+  })
+
 </script>
 
 
-<h1>Typing</h1>
+<h1>Demo</h1>
 
 <input
 id="input-typer"
@@ -104,6 +108,7 @@ style="
   justify-content: center;
   padding: 2em;
   line-hight: 2em;
+  font-family: monospace;
 ">
 
   {#each words as word, w}
@@ -134,7 +139,6 @@ style="
   {/each}
 
 </div>
-
 
 
 <button on:click={reset}>↺ Reset</button>
