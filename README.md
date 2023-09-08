@@ -5,9 +5,13 @@
 - [x] basic typing functionality with visuals.
 - [x] make the demo presnetable.
 - [ ] deploy the demo somewhere.
-- [ ] save the users mistyped words somewhere. Maybe add user accounts.
+- [ ] save the users mistyped words somewhere. Maybe add user account.
+- [ ] add training mistyped words ranked by how often you mistype it and the word frequency.
+- [ ] add a way to view mistyped words
 
 - [ ] add levels with different groups of words getting less common.
+- [ ] add a score page with accracy and info/stats about mistypes.
+
 - [ ] Add multi lingual support. Start with spanish.
 - [ ] make it look good with css
 - [ ] Add some basic functionality to lookup word and thier meaning.
