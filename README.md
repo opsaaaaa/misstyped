@@ -12,6 +12,8 @@
 - [ ] add levels with different groups of words getting less common.
 - [ ] add a score page with accracy and info/stats about mistypes.
 
+- [ ] Randomize words. I am thinking of using a random sort.
+
 - [ ] Add multi lingual support. Start with spanish.
 - [ ] make it look good with css
 - [ ] Add some basic functionality to lookup word and thier meaning.
