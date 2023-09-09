@@ -19,30 +19,23 @@ style="
   padding: 1em;
   width: fit-content;
   height: fit-content;
+  text-align: right;
 ">
-  <div
+  {#each memos as msg}
+  <p>{msg}</p>
+  {/each}
+
+  <button
+  on:click={()=>{memo.set('Hi, Im Memo. Im a robot.')}}
   style="
-    padding: .4em .8em;
+    font-size: 1.6rem;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
   ">
-
-    {#each memos as msg}
-    <p>{msg}</p>
-    {/each}
-
-    <button
-    on:click={()=>{memo.set('Hi, Im Memo. Im a robot.')}}
-    style="
-      font-size: 1.6rem;
-      display: inline-block;
-      width: min-content;
-      margin-top: -2em;
-      margin-left: -2em;
-    ">
-      🤖
-    </button>
+    🤖
+  </button>
 
 
-
-  </div>
 </div>
 
