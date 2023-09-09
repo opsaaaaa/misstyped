@@ -8,7 +8,6 @@
     memos.push(val)
     memos = memos
   })
-
 </script>
 
 <div

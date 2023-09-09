@@ -6,12 +6,12 @@
 - [x] basic typing functionality with visuals.
 - [x] make the demo presnetable.
 - [x] deploy the demo somewhere.
-- [X] cleanup code.
+- [x] cleanup code.
 - [x] make inputs work better. alias enter to space.
 
 ## Make it better
 - [x] start on layout
-- [ ] add message pannel to display "Try again" or "success"
+- [x] add message/memo pannel to display "Try again" or "success"
 - [ ] create a statistics page between levels.
 - [ ] add tooling for displaying word frequencies.
 - [ ] plan out pages.
