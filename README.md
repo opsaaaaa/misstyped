@@ -1,23 +1,37 @@
 
 # TODO
 
+## Hack it together Demo
 - [x] renders a string in a way I can style each letter.
 - [x] basic typing functionality with visuals.
 - [x] make the demo presnetable.
-- [ ] deploy the demo somewhere.
+- [x] deploy the demo somewhere.
+- [X] cleanup code.
+- [x] make inputs work better. alias enter to space.
+
+## Make it better
+- [x] start on layout
+- [ ] add message pannel to display "Try again" or "success"
+- [ ] create a statistics page between levels.
+- [ ] add tooling for displaying word frequencies.
+- [ ] plan out pages.
+- [ ] add a header and stuff.
+- [ ] add levels with different groups of words getting less common.
+- [ ] Randomize words. I am thinking of using a random sort.
 - [ ] save the users mistyped words somewhere. Maybe add user account.
 - [ ] add training mistyped words ranked by how often you mistype it and the word frequency.
 - [ ] add a way to view mistyped words
 
-- [ ] add levels with different groups of words getting less common.
 - [ ] add a score page with accracy and info/stats about mistypes.
 
-- [ ] Randomize words. I am thinking of using a random sort.
+
 
 - [ ] Add multi lingual support. Start with spanish.
 - [ ] make it look good with css
 - [ ] Add some basic functionality to lookup word and thier meaning.
 - [ ] add some scrolling behavor?
+
+- [ ] downcase it so that phones don't freakout.
 
 - [ ] get typescript working properly.
 
@@ -47,6 +61,15 @@ ok thats not bad.
     - miss type recording.
     - slow recording.
     - analizer.
+
+# Plan it out.
+
+Pages things/
+- Typer
+- Show score
+- Navbar
+- list mistypes
+- 
 
 # Roadmap to somewhere far away.
 
