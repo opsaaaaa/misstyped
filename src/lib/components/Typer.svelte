@@ -101,12 +101,6 @@
 </script>
 
 
-<form
-id="Typer"
-on:submit|preventDefault={reset}
-on:reset|preventDefault={reset}
->
-
 <div
 style="
   position: relative;
@@ -187,9 +181,7 @@ style="
 </div>
 
 <button on:click={reset}>↺ Reset</button>
-<button type="reset">↺ Reset</button>
 
-</form>
 
 <style>
   #click-to-continue {

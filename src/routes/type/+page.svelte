@@ -1,5 +1,6 @@
 <script lang="ts">
   import Typer from "$lib/components/Typer.svelte"
+  import { memo } from "$lib/store/memo.ts"
 
   const SPACE = ' '
 
@@ -23,14 +24,17 @@
 
   function onSucceed() {
     reset()
+    memo.set("Success!")
   }
 
   function onFail() {
     reset()
+    memo.set("Try again!")
   }
 
   function onReset() {
     reset()
+    memo.set("Reset")
   }
 
 </script>

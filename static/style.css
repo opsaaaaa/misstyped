@@ -1,0 +1,12 @@
+
+p {
+  margin: 0;
+}
+
+button, input, select, textarea, form {
+  font-size: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
