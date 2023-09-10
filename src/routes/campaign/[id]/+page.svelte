@@ -18,6 +18,7 @@
   function reset() {
     clear()
     words = shuffle(words)
+    memo.set("Avoid reseting, the purpose is to collect typos.")
   }
 
   function onSucceed() {
