@@ -71,6 +71,13 @@ Pages things/
 - list mistypes
 - 
 
+## Modes
+
+- Campain Mode
+- Random mode, word frequency ajusted.
+- Custum word mode
+
+
 # Roadmap to somewhere far away.
 
 - [ ] think about creating a vim extension or writting tool that tracks what you misspell.
