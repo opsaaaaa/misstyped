@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-
-  const SPACE = ' '
-  const NEWLINE = "\n"
+  import { SPACE, NEWLINE } from "$lib/utils.ts"
+  import { onMount, afterUpdate } from 'svelte'
 
   export let words: string[]
 
@@ -11,20 +9,18 @@
 
   export let onSucceed = ()=>{}
   export let onFail = ()=>{}
-  export let onReset = ()=>{}
 
   let typer
   let lastSpace = false
 
+  export function focus() {
+    setTimeout(()=>{typer.focus()}, 50)
+  }
+
   export function clear() {
     input = ['']
     missed = []
-    typer.focus()
-  }
-
-  function reset() {
-    clear()
-    onReset()
+    focus()
   }
 
   function handleInput(e) {
@@ -93,10 +89,9 @@
     }
   }
 
+  onMount(focus)
 
-  onMount(()=>{
-    typer.focus()
-  })
+  afterUpdate(focus)
 
 </script>
 
@@ -179,8 +174,6 @@ style="
   </div>
 
 </div>
-
-<button on:click={reset}>↺ Reset</button>
 
 
 <style>

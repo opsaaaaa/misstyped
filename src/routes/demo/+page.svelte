@@ -1,21 +1,14 @@
 <script lang="ts">
+  import { shuffle, SPACE } from "$lib/utils.ts"
   import Typer from "$lib/components/Typer.svelte"
   import { memo } from "$lib/store/memo.ts"
 
-  const SPACE = ' '
-
-  const levels: string[] = [
-    "the to and of a in I is for that you it on with this was be as are have"
-  ]
-  
-  export let words: string[] = shuffle(levels[0].split(SPACE))
-
-  function shuffle(arr: Array) {
-    return arr.sort(()=>((Math.round(Math.random())*2)-1))
-  }
+  export let words: string[] = shuffle(
+    "the to and of a in I is for that you it on with this was be as are have".split(SPACE)
+  )
 
   function reset() {
-    words = shuffle(levels[0].split(SPACE))
+    words = shuffle(words)
   }
 
   function next() {
