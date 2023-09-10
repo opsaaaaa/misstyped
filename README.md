@@ -1,7 +1,8 @@
 
 # NOTES
 
-...
+ok So I think this should be different.
+
 
 # TODO
 
