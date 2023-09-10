@@ -12,15 +12,17 @@
 ## Make it better
 - [x] start on layout
 - [x] add message/memo pannel to display "Try again" or "success"
+- [x] add levels with different groups of words getting less common.
+- [x] Randomize words. I am thinking of using a random sort.
 - [ ] create a statistics page between levels.
 - [ ] add tooling for displaying word frequencies.
 - [ ] plan out pages.
 - [ ] add a header and stuff.
-- [ ] add levels with different groups of words getting less common.
-- [ ] Randomize words. I am thinking of using a random sort.
 - [ ] save the users mistyped words somewhere. Maybe add user account.
 - [ ] add training mistyped words ranked by how often you mistype it and the word frequency.
 - [ ] add a way to view mistyped words
+- [ ] add a export to csv
+- [ ] create a function that selects random words while respecting word frequency
 
 - [ ] add a score page with accracy and info/stats about mistypes.
 
