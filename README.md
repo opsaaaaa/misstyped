@@ -1,5 +1,10 @@
 
+# NOTES
+
+...
+
 # TODO
+
 
 ## Hack it together Demo
 - [x] renders a string in a way I can style each letter.
