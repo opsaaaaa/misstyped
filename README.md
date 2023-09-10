@@ -14,6 +14,18 @@
 - [x] add message/memo pannel to display "Try again" or "success"
 - [x] add levels with different groups of words getting less common.
 - [x] Randomize words. I am thinking of using a random sort.
+
+- [ ] make index page for campaign
+- [ ] imporove campaign pagination.
+
+- [ ] pick database or storage
+
+- [ ] look at supabase v netlify.
+- [ ] https://supabase.com/docs/guides/getting-started/tutorials/with-sveltekit
+
+- [ ] fix uppercase phone bug.
+- [ ] set the default max_attemtps to 2.
+- [ ] create a settings page. max_attempts. font. font-size. linehight. color.
 - [ ] create a statistics page between levels.
 - [ ] add tooling for displaying word frequencies.
 - [ ] plan out pages.
@@ -25,7 +37,6 @@
 - [ ] create a function that selects random words while respecting word frequency
 
 - [ ] add a score page with accracy and info/stats about mistypes.
-
 
 
 - [ ] Add multi lingual support. Start with spanish.

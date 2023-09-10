@@ -1,7 +1,7 @@
 import levels from "$lib/data/en/levels.json"
 import { shuffle, SPACE } from "$lib/utils.ts"
 
-export function load({ params }) {
+export function load({ params }: any) {
 
     const id = Number(params.id)
     const next = (id + 1) % levels.length

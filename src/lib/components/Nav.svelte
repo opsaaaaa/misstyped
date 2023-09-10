@@ -7,7 +7,7 @@ style="
 ">
   <a href="/">Home</a>
   <a href="/demo">Demo</a>
-  <a href="/campaign">Campaign</a>
+  <a href="/campaign">Campaigns</a>
 </nav>
 
 

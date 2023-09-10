@@ -1,15 +1,14 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { shuffle, SPACE } from "$lib/utils.ts"
+  import { shuffle } from "$lib/utils.ts"
   import Typer from "$lib/components/Typer.svelte"
   import { memo } from "$lib/store/memo.ts"
-  import { goto } from '$app/navigation';
+  import { goto } from '$app/navigation'
 
-  const MAX_ATTEMPTS = 3
+  const MAX_ATTEMPTS = 2
 
   /** @type {import('./$types').PageData} */
-  export let data;
-  export let clear;
+  export let data: any;
+  export let clear: ()=>void;
 
   let attempts = 0
 
@@ -18,7 +17,6 @@
   function reset() {
     clear()
     words = shuffle(words)
-    memo.set("Avoid reseting, the purpose is to collect typos.")
   }
 
   function onSucceed() {
@@ -39,7 +37,7 @@
 
   function onReset() {
     reset()
-    memo.set("Reset")
+    memo.set("Avoid resetting because the goal is to collect your typos.")
   }
 
 </script>
@@ -48,7 +46,7 @@
 
 <Typer {words} {onSucceed} {onFail} bind:clear={clear}/>
 
-<button on:click={reset}>↺ Reset</button>
+<button on:click={onReset}>↺ Reset</button>
 
 <a
 on:click={clear}
