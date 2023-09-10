@@ -44,7 +44,7 @@
 
 </script>
 
-<h1>Campaign</h1>
+<h1>Campaign #{data.id}</h1>
 
 <Typer {words} {onSucceed} {onFail} bind:clear={clear}/>
 
