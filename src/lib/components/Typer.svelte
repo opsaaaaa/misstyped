@@ -1,95 +1,72 @@
 <script lang="ts">
-  import { SPACE, NEWLINE } from "$lib/utils.ts"
+  import { SPACE, subStringsMatch } from "$lib/utils.ts"
   import { onMount, afterUpdate } from 'svelte'
 
-  export let words: string[]
+  export let expected: string[] = ['']
+  export let actuall: string[] = ['']
 
-  export let missed: Array<string[]> = []
-  export let input: string[] = ['']
+  let missed: string[] = []
 
   export let onSucceed = ()=>{}
   export let onFail = ()=>{}
 
-  let typer
-  let lastSpace = false
+  // Note that typer.value has a leading space.
+  // this is done because some devices autoshift/capitalize for empty inputs.
+  let typer: HTMLInputElement
 
   export function focus() {
+    typer.setSelectionRange(typer.value.length, typer.value.length)
     setTimeout(()=>{typer.focus()}, 50)
   }
 
   export function clear() {
-    input = ['']
+    actuall = ['']
     missed = []
+    typer.value = SPACE
     focus()
   }
 
-  function handleInput(e) {
-    // TODO: think about using e.data instead,
-    // think about the inputType and what Im suporting
-    // there is a bug on phone keyboard where every character is capital
-    // because its always a empty line.
-    let newChar = e.target.value
-    e.target.value = ''
-
-    if (newChar === NEWLINE) {
-      newChar = SPACE
-    }
-
-    if (newChar.length !== 1) { 
+  function completeWord() {
+    if(actuall.length >= expected.length) {
+      if(missed.length > 0) {
+        onFail()
+      } else {
+        onSucceed()
+      }
+      clear()
       return
     }
-    const w = input.length - 1
-    const l = input[w]?.length
+    actuall.push('')
+    actuall = actuall
+    typer.value = SPACE
+  }
 
-    if (newChar === SPACE) {
+  function typoAt(w: number, typo: string) {
+    missed[w] = typo
+    missed = missed
+  }
 
-      if(input.length === words.length) {
-        if(missed.length > 0) {
-          onFail()
-        } else {
-          onSucceed()
-        }
-        clear()
-        return
+  function handleInput(e: InputEvent | any) {
+    const w = actuall.length - 1
+    const val = typer.value.trim()
+
+    if(e.data === SPACE) {
+      if(val.length !== expected[w].length) {
+        typoAt(w, val)
       }
-
-      if(lastSpace) {
-        return
-      }
-      lastSpace = true
-      if(!missed[w] && input[w].length < words[w].length) {
-        addMissed(w, words[w][l], SPACE)
-        console.log(missed)
-      }
-
-      input[input.length] = ''
-
+      completeWord()
       return
     }
-    lastSpace = false
 
-    input[w] += newChar
-
-    if (w < 0 || l === undefined ) { return }
-
-    const targetChar = words[w][l]
-    
-    if (newChar === targetChar) {return}
-
-    addMissed(w, targetChar, newChar)
-  }
-
-  function addMissed(w, targetChar, newChar) {
-    if(missed[w]) {
-      missed[w][1] = input[w]
-      missed[w][2] += targetChar
-      missed[w][3] += newChar
-    } else {
-      missed[w] = [words[w], input[w], targetChar, newChar]
+    if (!subStringsMatch(val, expected[w],
+          actuall[w].length, val.length)) {
+      typoAt(w, val)
     }
+
+    actuall[w] = val
   }
 
-  onMount(focus)
+  onMount(clear)
 
   afterUpdate(focus)
 
@@ -107,19 +84,23 @@ style="
   font-family: monospace;
 ">
 
-  <textarea
+  <input
   id="input-typer"
   bind:this={typer}
   on:input={handleInput}
   on:submit={(e)=>{console.log(e)}}
+  placeholder={expected[actuall.length - 1]}
   style="
     opacity: 0;
     position: absolute;
-  "></textarea>
+  "/>
 
   <div
   id="word-box"
-  on:click={()=>{typer.focus()}}
+  role="textbox"
+  tabindex="-1"
+  on:keypress={focus}
+  on:click={focus}
   style="
     color: gray;
     display: flex;
@@ -127,17 +108,17 @@ style="
     justify-content: center;
   ">
 
-    {#each words as word, w}
-    {@const active = w+1 == input.length}
+    {#each expected as word, w}
+    {@const active = w+1 == actuall.length}
     <span
     class="word"
     >
       {#each word as letter, l}
-      {@const inputLetter = input[w] ? input[w][l] : undefined}
+      {@const inputLetter = actuall[w] ? actuall[w][l] : undefined}
       <letter
       class:miss={inputLetter && inputLetter !== letter}
       class:hit={inputLetter === letter}
-      class:active={active && l == input[w]?.length}
+      class:active={active && l == actuall[w]?.length}
       >
         {letter}
       </letter>
@@ -145,12 +126,12 @@ style="
       {/each}
 
       {#if missed[w]}
-        <hint>{missed[w][1]}</hint>
+        <hint>{missed[w]}</hint>
       {/if}
     </span>
 
     <letter
-    class:active={active && input[w]?.length >= word.length}
+    class:active={active && actuall[w]?.length >= word.length}
     >&nbsp;</letter>
     {/each}
   </div>

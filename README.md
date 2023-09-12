@@ -2,6 +2,13 @@
 # NOTES
 
 ok So I think this should be different.
+How so.
+
+I don't want to just do campaigns.
+It should pick the lession/test/campaign smartly.
+Its should do that intelegently.
+
+
 
 
 # TODO

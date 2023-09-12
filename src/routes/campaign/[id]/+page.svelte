@@ -4,6 +4,10 @@
   import { memo } from "$lib/store/memo.ts"
   import { goto } from '$app/navigation'
 
+  import text from '$lib/data/words/en.400.txt'
+
+  console.log(text)
+
   const MAX_ATTEMPTS = 2
 
   /** @type {import('./$types').PageData} */
@@ -44,7 +48,7 @@
 
 <h1>Campaign #{data.id}</h1>
 
-<Typer {words} {onSucceed} {onFail} bind:clear={clear}/>
+<Typer expected={words} {onSucceed} {onFail} bind:clear={clear}/>
 
 <button on:click={onReset}>↺ Reset</button>
 
