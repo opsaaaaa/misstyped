@@ -1,4 +1,8 @@
 
+* {
+  box-sizing: border-box;
+}
+
 p {
   margin: 0;
 }
@@ -8,5 +12,17 @@ button, input, select, textarea, form {
   border: none;
   background: none;
   color: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+.zero {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.noto, .icon, .emoji {
+  font-family: 'Noto Emoji', sans-serif;
 }
 

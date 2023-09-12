@@ -8,6 +8,7 @@ style="
   <a href="/">Home</a>
   <a href="/demo">Demo</a>
   <a href="/campaign">Campaigns</a>
+  <a href="/custom">Custom</a>
 </nav>
 
 

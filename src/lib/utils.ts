@@ -11,3 +11,7 @@ export function subStringsMatch(a:string, b:string, start:number, end: number):b
   return a.slice(start, end) === b.slice(start, end)
 }
 
+export function isBlankString(str: string): boolean {
+  return !str.match(/[^ ]/)
+}
+

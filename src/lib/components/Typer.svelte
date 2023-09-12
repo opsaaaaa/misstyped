@@ -150,8 +150,8 @@ style="
     font-size: 1.4rem;
     line-height: 2em;
   ">
-    <p style="margin: 0">Click to Continue Typing</p>
-    <p style="font-size: 6rem; margin: 0;">⌨️</p>
+    <p>Click to Continue Typing</p>
+    <p class="emoji" style="font-size: 4rem;">⌨️</p>
   </div>
 
 </div>
@@ -159,12 +159,12 @@ style="
 
 <style>
   #click-to-continue {
-    visiblity: visible;
+    visibility: visible;
     transition: opacity 150ms 1s ease;
   }
   #input-typer:focus ~ #click-to-continue {
     opacity: 0;
-    visiblity: hidden;
+    visibility: hidden;
     transition: none;
   }
   #input-typer:not(:focus) ~ #word-box {
@@ -205,6 +205,4 @@ style="
     background: #8080 ;
   }
 </style>
-
-
 
