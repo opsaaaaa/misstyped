@@ -2,7 +2,7 @@
 
 <p>We help you Find, Track, and Fix the all words you frequently Mistype.</p>
 
-<p><a href="/demo">Try the Demo</a> to Stop Misstyping!</p>
+<p><a href="/campaign/0">Try the demo</a> to Stop Misstyping!</p>
 
 
 
