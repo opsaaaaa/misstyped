@@ -27,23 +27,34 @@ Its should do that intelegently.
 - [x] add message/memo pannel to display "Try again" or "success"
 - [x] add levels with different groups of words getting less common.
 - [x] Randomize words. I am thinking of using a random sort.
+- [x] make index page for campaign
+- [x] imporove campaign pagination.
+- [x] fix uppercase phone bug.
+- [x] set the default max_attemtps to 2.
 
-- [ ] make index page for campaign
-- [ ] imporove campaign pagination.
-
+### Data
+- [ ] save the users mistyped words somewhere. Maybe add user account.
+- [ ] record typos locally. word: string index, hitCount: int, missCount: int, mistypes: string[]
+    - If you use a heep, then store it by the hitCount/missCount/freq ratio. with largest on top.
+    - So that we can pull worst cases first.
+- [ ] record typos remotely.
 - [ ] pick database or storage
-
 - [ ] look at supabase v netlify.
 - [ ] https://supabase.com/docs/guides/getting-started/tutorials/with-sveltekit
 
-- [ ] fix uppercase phone bug.
-- [ ] set the default max_attemtps to 2.
+### Css
+- [ ] add some css vars for colors and sizes.
+- [ ] make icon buttons look good.
+
+### App
+- [x] add a header and stuff.
 - [ ] create a settings page. max_attempts. font. font-size. linehight. color.
 - [ ] create a statistics page between levels.
 - [ ] add tooling for displaying word frequencies.
+
+### Thinking
 - [ ] plan out pages.
-- [ ] add a header and stuff.
-- [ ] save the users mistyped words somewhere. Maybe add user account.
+
 - [ ] add training mistyped words ranked by how often you mistype it and the word frequency.
 - [ ] add a way to view mistyped words
 - [ ] add a export to csv
